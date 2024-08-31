@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 
-public class rotate : MonoBehaviour
+public class playerCircle : MonoBehaviour
 {
     public bool clockwise = true;
     private void Update()
