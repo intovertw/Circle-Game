@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class spikes : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject player;
+    public Rigidbody2D rb;
+    public float moveSpeed = 5f;
+    Vector2 movement;
+
+    private void Awake()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");    
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        transform.Translate(Vector2.up * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            player.SetActive(false);
+        }
+        if (other.gameObject.tag.Equals("deleter"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

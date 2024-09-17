@@ -6,6 +6,7 @@ TagManager:
   tags:
   - obstacle
   - collectibles
+  - deleter
   layers:
   - Default
   - TransparentFX

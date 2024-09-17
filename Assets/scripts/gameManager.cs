@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class gameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    static public int score;
+    static public bool playerAlive;
+
+    public TMP_Text scoreText;
+
+    private void Awake()
     {
-        
+        score = 0;
+        playerAlive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        scoreText.text = score.ToString();
+        Debug.Log(score);
     }
 }
