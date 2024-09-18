@@ -19,7 +19,13 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //handles score
         scoreText.text = score.ToString();
         Debug.Log(score);
+
+        if(playerAlive == false)
+        {
+            Debug.Log("you suck ass");
+        }
     }
 }

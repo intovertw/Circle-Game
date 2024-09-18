@@ -5,7 +5,6 @@ using UnityEngine;
 public class spikes : MonoBehaviour
 {
     public GameObject player;
-    public Rigidbody2D rb;
     public float moveSpeed = 5f;
     Vector2 movement;
 
@@ -23,6 +22,7 @@ public class spikes : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player"))
         {
+            gameManager.playerAlive = false;
             player.SetActive(false);
         }
         if (other.gameObject.tag.Equals("deleter"))

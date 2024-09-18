@@ -15,7 +15,7 @@ public class spawner : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(Random.Range(3, 15));
+            yield return new WaitForSeconds(Random.Range(3, 7));
             Instantiate(spikes[Random.Range(0,5)], transform.localPosition, transform.rotation);
         }
     }
