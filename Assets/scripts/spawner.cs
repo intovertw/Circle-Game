@@ -5,6 +5,7 @@ using UnityEngine;
 public class spawner : MonoBehaviour
 {
     public GameObject[] spikes;
+    float timerMin = 5f, timerMax = 15f;
 
     void Awake()
     {
@@ -15,8 +16,14 @@ public class spawner : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(Random.Range(3, 7));
-            Instantiate(spikes[Random.Range(0,5)], transform.localPosition, transform.rotation);
+            yield return new WaitForSeconds(Random.Range(timerMin, timerMax));
+            Instantiate(spikes[Random.Range(0, 5)], transform.localPosition, transform.rotation);
+
+            if(gameManager.score >= 100)
+            {
+                timerMin = 1f;
+                timerMax = 2f;
+            }
         }
     }
 }

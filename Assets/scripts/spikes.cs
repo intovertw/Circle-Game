@@ -13,6 +13,15 @@ public class spikes : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");    
     }
 
+    private void Update()
+    {
+        //spike speedup after 10 points
+        if (gameManager.score >= 10)
+        {
+            moveSpeed = 10f;
+        }
+    }
+
     void FixedUpdate()
     {
         transform.Translate(Vector2.up * moveSpeed * Time.fixedDeltaTime);
