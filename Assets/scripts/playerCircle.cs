@@ -8,12 +8,12 @@ public class playerCircle : MonoBehaviour
     public bool clockwise = true;
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0) && clockwise == true)
+        if((Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) && clockwise == true)
         {
             clockwise = false;
             Debug.Log("clock wise false");
         }
-        else if (Input.GetMouseButtonDown(0) && clockwise == false)
+        else if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) && clockwise == false)
         {
             clockwise = true;
             Debug.Log("clockwise real and true");

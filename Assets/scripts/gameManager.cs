@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class gameManager : MonoBehaviour
         //game over
         if(playerAlive == false)
         {
-            Debug.Log("you suck ass");
+            SceneManager.LoadSceneAsync("GameOver");
         }
     }
 }
